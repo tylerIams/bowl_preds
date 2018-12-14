@@ -12,75 +12,78 @@ library(tidyverse)
 
 ```{r, message=FALSE, warning=FALSE}
 # 2008 data
-conf_dat_2008 <- read_csv("2008_conf.csv")
-def_dat_2008 <- read_csv("2008_defense.csv")
-off_dat_2008 <- read_csv("2008_offense.csv")
-game_dat_2008 <- read_csv("2008_games.csv")
+conf_dat_2008 <- read_csv("data/2008_conf.csv")
+def_dat_2008 <- read_csv("data/2008_defense.csv")
+off_dat_2008 <- read_csv("data/2008_offense.csv")
+game_dat_2008 <- read_csv("data/2008_games.csv")
 
 # 2009 data
-conf_dat_2009 <- read_csv("2009_conf.csv")
-def_dat_2009 <- read_csv("2009_defense.csv")
-off_dat_2009 <- read_csv("2009_offense.csv")
-game_dat_2009 <- read_csv("2009_games.csv")
+conf_dat_2009 <- read_csv("data/2009_conf.csv")
+def_dat_2009 <- read_csv("data/2009_defense.csv")
+off_dat_2009 <- read_csv("data/2009_offense.csv")
+game_dat_2009 <- read_csv("data/2009_games.csv")
 
 # 2010 data
-conf_dat_2010 <- read_csv("2010_conf.csv")
-def_dat_2010 <- read_csv("2010_defense.csv")
-off_dat_2010 <- read_csv("2010_offense.csv")
-game_dat_2010 <- read_csv("2010_games.csv")
+conf_dat_2010 <- read_csv("data/2010_conf.csv")
+def_dat_2010 <- read_csv("data/2010_defense.csv")
+off_dat_2010 <- read_csv("data/2010_offense.csv")
+game_dat_2010 <- read_csv("data/2010_games.csv")
 
 #2011 data
-conf_dat_2011 <- read_csv("2011_conf.csv")
-def_dat_2011 <- read_csv("2011_defense.csv")
-off_dat_2011 <- read_csv("2011_offense.csv")
-game_dat_2011 <- read_csv("2011_games.csv")
+conf_dat_2011 <- read_csv("data/2011_conf.csv")
+def_dat_2011 <- read_csv("data/2011_defense.csv")
+off_dat_2011 <- read_csv("data/2011_offense.csv")
+game_dat_2011 <- read_csv("data/2011_games.csv")
 
 #2012 data
-conf_dat_2012 <- read_csv("2012_conf.csv")
-def_dat_2012 <- read_csv("2012_defense.csv")
-off_dat_2012 <- read_csv("2012_offense.csv")
-game_dat_2012 <- read_csv("2012_games.csv")
+conf_dat_2012 <- read_csv("data/2012_conf.csv")
+def_dat_2012 <- read_csv("data/2012_defense.csv")
+off_dat_2012 <- read_csv("data/2012_offense.csv")
+game_dat_2012 <- read_csv("data/2012_games.csv")
 
 #2013 data
-conf_dat_2013 <- read_csv("2013_conf.csv")
-def_dat_2013 <- read_csv("2013_defense.csv")
-off_dat_2013 <- read_csv("2013_offense.csv")
-game_dat_2013 <- read_csv("2013_games.csv")
+conf_dat_2013 <- read_csv("data/2013_conf.csv")
+def_dat_2013 <- read_csv("data/2013_defense.csv")
+off_dat_2013 <- read_csv("data/2013_offense.csv")
+game_dat_2013 <- read_csv("data/2013_games.csv")
 
 #2014 data
-conf_dat_2014 <- read_csv("2014_conf.csv")
-def_dat_2014 <- read_csv("2014_defense.csv")
-off_dat_2014 <- read_csv("2014_offense.csv")
-game_dat_2014 <- read_csv("2014_games.csv")
+conf_dat_2014 <- read_csv("data/2014_conf.csv")
+def_dat_2014 <- read_csv("data/2014_defense.csv")
+off_dat_2014 <- read_csv("data/2014_offense.csv")
+game_dat_2014 <- read_csv("data/2014_games.csv")
 
 #2015 data
-conf_dat_2015 <- read_csv("2015_conf.csv")
-def_dat_2015 <- read_csv("2015_defense.csv")
-off_dat_2015 <- read_csv("2015_offense.csv")
-game_dat_2015 <- read_csv("2015_games.csv")
+conf_dat_2015 <- read_csv("data/2015_conf.csv")
+def_dat_2015 <- read_csv("data/2015_defense.csv")
+off_dat_2015 <- read_csv("data/2015_offense.csv")
+game_dat_2015 <- read_csv("data/2015_games.csv")
 
 #2016 data
-conf_dat_2016 <- read_csv("2016_conf.csv")
-def_dat_2016 <- read_csv("2016_defense.csv")
-off_dat_2016 <- read_csv("2016_offense.csv")
-game_dat_2016 <- read_csv("2016_games.csv")
+conf_dat_2016 <- read_csv("data/2016_conf.csv")
+def_dat_2016 <- read_csv("data/2016_defense.csv")
+off_dat_2016 <- read_csv("data/2016_offense.csv")
+game_dat_2016 <- read_csv("data/2016_games.csv")
 
 #2017 data
-conf_dat_2017 <- read_csv("2017_conf.csv")
-def_dat_2017 <- read_csv("2017_defense.csv")
-off_dat_2017 <- read_csv("2017_offense.csv")
-game_dat_2017 <- read_csv("2017_games.csv")
+conf_dat_2017 <- read_csv("data/2017_conf.csv")
+def_dat_2017 <- read_csv("data/2017_defense.csv")
+off_dat_2017 <- read_csv("data/2017_offense.csv")
+game_dat_2017 <- read_csv("data/2017_games.csv")
 
 #2018 data
-conf_dat_2018 <- read_csv("2018_conf.csv")
-def_dat_2018 <- read_csv("2018_defense.csv")
-off_dat_2018 <- read_csv("2018_offense.csv")
-game_dat_2018 <- read_csv("2018_games.csv")
+conf_dat_2018 <- read_csv("data/2018_conf.csv")
+def_dat_2018 <- read_csv("data/2018_defense.csv")
+off_dat_2018 <- read_csv("data/2018_offense.csv")
+game_dat_2018 <- read_csv("data/2018_games.csv")
 ```
 
 ```{r}
 #conf data
-conference_list <- read_csv("conf_teams.csv")
+
+# This reads the conf_teams.csv file and formats the column names, and removes subconferences, ie if a team is in SEC West, they just become SEC.  This is in order to create less levels when it is turned into a factor variable, and because we presume that differences between partitions of conferences will be negligible.
+
+conference_list <- read_csv("data/conf_teams.csv")
 conference_list <- conference_list %>% rename(School = X2, conf = X3)
 
 conference_list <- conference_list %>% select(School, conf)
@@ -102,6 +105,8 @@ conference_list <- conference_list %>% mutate(School = trimws(School))
 **Offensive Function**
 
 ```{r}
+# This formats the offensive data by renaming columns.  Column names had occupied two rows, and this simplifies column names to only occupy one row.
+
 formatter_off <- function(off_dat) {
     off_dat <- off_dat %>% rename(off_rank = X1, Home = X2, games = X3, pts = X4, p_comp = Passing, p_att = Passing_1, comp_pct = Passing_2, p_yds = Passing_3, p_td = Passing_4, r_att = Rushing, r_yds = Rushing_1, r_avg = Rushing_2, r_td = Rushing_3, ttl_off_plays= `Total Offense`, ttl_off_yds = `Total Offense_1`, ttl_off_avg = `Total Offense_2`, pass_fd = `First Downs`, rush_fd = `First Downs_1`, pen_fd = `First Downs_2`, ttl_fd = `First Downs_3`, pen = Penalties, pen_yds = Penalties_1, fum = Turnovers, int = Turnovers_1, turnover = Turnovers_2)
 
@@ -124,6 +129,8 @@ off_dat_2018 <- formatter_off(off_dat_2018)
 **Defensive Function**
 
 ```{r}
+# This simplifies defensive data in the same way by taking two-row column headers and making them into single row column headers.
+
 formatter_def <- function(def_dat)  {
     def_dat <- def_dat %>% rename(def_rank = X1, Home = X2, games = X3, opp_pts = X4, opp_p_comp = Passing, opp_p_att = Passing_1, opp_comp_pct = Passing_2, opp_p_yds = Passing_3, opp_p_td = Passing_4, opp_r_att = Rushing, opp_r_yds = Rushing_1, opp_r_avg = Rushing_2, opp_r_td = Rushing_3, opp_ttl_off_plays= `Total Offense`, opp_ttl_off_yds = `Total Offense_1`, opp_ttl_off_avg = `Total Offense_2`, opp_pass_fd = `First Downs`, opp_rush_fd = `First Downs_1`, opp_pen_fd = `First Downs_2`, opp_ttl_fd = `First Downs_3`, def_pen = Penalties, def_pen_yds = Penalties_1, opp_fum = Turnovers, opp_int = Turnovers_1, opp_turnover = Turnovers_2)
 
@@ -145,6 +152,8 @@ def_dat_2018 <- formatter_def(def_dat_2018)
 
 
 ```{r}
+# These functions format the way the team names are presented in the game data file.  Some team names included their weekly top 25 ranking, and this would disrupt the ability to join by team name later on, so we disposed of the rankings.
+
 formatter_game1 <- function(game_dat, year) {
 
   game_dat <- game_dat %>% mutate(Winner = gsub("\\(", "", game_dat$Winner))
@@ -230,87 +239,69 @@ game_dat_2018 <- formatter_game2(game_dat_2018, 2018)
 ```
   
 ```{r}
+# This chunk simply prepares team names for a join in all files by trimming white space surrounding the strings.
+
 game_dat_2018 <- game_dat_2018 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2018 <- off_dat_2018 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2018 <- def_dat_2018 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2018 <- off_dat_2018 %>% mutate(Home = trimws(Home))
+def_dat_2018 <- def_dat_2018 %>% mutate(Home = trimws(Home))
 
 game_dat_2017 <- game_dat_2017 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2017 <- off_dat_2017 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2017 <- def_dat_2017 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2017 <- off_dat_2017 %>% mutate(Home = trimws(Home))
+def_dat_2017 <- def_dat_2017 %>% mutate(Home = trimws(Home))
 
 game_dat_2016 <- game_dat_2016 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2016 <- off_dat_2016 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2016 <- def_dat_2016 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2016 <- off_dat_2016 %>% mutate(Home = trimws(Home))
+def_dat_2016 <- def_dat_2016 %>% mutate(Home = trimws(Home))
 
 game_dat_2015 <- game_dat_2015 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2015 <- off_dat_2015 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2015 <- def_dat_2015 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2015 <- off_dat_2015 %>% mutate(Home = trimws(Home))
+def_dat_2015 <- def_dat_2015 %>% mutate(Home = trimws(Home))
 
 game_dat_2014 <- game_dat_2014 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2014 <- off_dat_2014 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2014 <- def_dat_2014 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2014 <- off_dat_2014 %>% mutate(Home = trimws(Home))
+def_dat_2014 <- def_dat_2014 %>% mutate(Home = trimws(Home))
 
 game_dat_2013 <- game_dat_2013 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2013 <- off_dat_2013 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2013 <- def_dat_2013 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2013 <- off_dat_2013 %>% mutate(Home = trimws(Home))
+def_dat_2013 <- def_dat_2013 %>% mutate(Home = trimws(Home))
 
 game_dat_2012 <- game_dat_2012 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2012 <- off_dat_2012 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2012 <- def_dat_2012 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2012 <- off_dat_2012 %>% mutate(Home = trimws(Home))
+def_dat_2012 <- def_dat_2012 %>% mutate(Home = trimws(Home))
 
 game_dat_2011 <- game_dat_2011 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2011 <- off_dat_2011 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2011 <- def_dat_2011 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2011 <- off_dat_2011 %>% mutate(Home = trimws(Home))
+def_dat_2011 <- def_dat_2011 %>% mutate(Home = trimws(Home))
 
 game_dat_2010 <- game_dat_2010 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2010 <- off_dat_2010 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2010 <- def_dat_2010 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2010 <- off_dat_2010 %>% mutate(Home = trimws(Home))
+def_dat_2010 <- def_dat_2010 %>% mutate(Home = trimws(Home))
 
 game_dat_2009 <- game_dat_2009 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2009 <- off_dat_2009 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2009 <- def_dat_2009 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2009 <- off_dat_2009 %>% mutate(Home = trimws(Home))
+def_dat_2009 <- def_dat_2009 %>% mutate(Home = trimws(Home))
 
 game_dat_2008 <- game_dat_2008 %>% mutate(Home = trimws(Home),
                                           Away = trimws(Away))
-off_dat_2008 <- off_dat_2008 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
-def_dat_2008 <- def_dat_2008 %>% mutate(Home = trimws(Home),
-                                          Away = trimws(Away))
+off_dat_2008 <- off_dat_2008 %>% mutate(Home = trimws(Home))
+def_dat_2008 <- def_dat_2008 %>% mutate(Home = trimws(Home))
 
 ```
 
 
 ```{r}
+# These functions modify some team names from the game data table.  In our offense and defensive tables the team names were sometimes presented with slightly different representations of the same team, and therefore we needed to reformat one in order for joins to work properly.
+
 fix_up_home <- function(dat) {
   dat <- dat %>% mutate(Home = trimws(Home), 
                         Away = trimws(Away), 
@@ -348,9 +339,40 @@ fix_up_away <- function(dat) {
 game_dat_2018 <- fix_up_home(game_dat_2018)
 game_dat_2018 <- fix_up_away(game_dat_2018)
 
+game_dat_2017 <- fix_up_home(game_dat_2017)
+game_dat_2017 <- fix_up_away(game_dat_2017)
+
+game_dat_2016 <- fix_up_home(game_dat_2016)
+game_dat_2016 <- fix_up_away(game_dat_2016)
+
+game_dat_2015 <- fix_up_home(game_dat_2015)
+game_dat_2015 <- fix_up_away(game_dat_2015)
+
+game_dat_2014 <- fix_up_home(game_dat_2014)
+game_dat_2014 <- fix_up_away(game_dat_2014)
+
+game_dat_2013 <- fix_up_home(game_dat_2013)
+game_dat_2013 <- fix_up_away(game_dat_2013)
+
+game_dat_2012 <- fix_up_home(game_dat_2012)
+game_dat_2012 <- fix_up_away(game_dat_2012)
+
+game_dat_2011 <- fix_up_home(game_dat_2011)
+game_dat_2011 <- fix_up_away(game_dat_2011)
+
+game_dat_2010 <- fix_up_home(game_dat_2010)
+game_dat_2010 <- fix_up_away(game_dat_2010)
+
+game_dat_2009 <- fix_up_home(game_dat_2009)
+game_dat_2009 <- fix_up_away(game_dat_2009)
+
+game_dat_2008 <- fix_up_home(game_dat_2008)
+game_dat_2008 <- fix_up_away(game_dat_2008)
 ```
 
 ```{r}
+# This chunk simply joins the offensive and defensive data for all years.
+
 team_dat_2018 <- full_join(off_dat_2018, def_dat_2018, "Home")
 team_dat_2017 <- full_join(off_dat_2017, def_dat_2017, "Home")
 team_dat_2016 <- full_join(off_dat_2016, def_dat_2016, "Home")
@@ -365,16 +387,76 @@ team_dat_2008 <- full_join(off_dat_2008, def_dat_2008, "Home")
 ```
 
 ```{r}
-
-
-
+game_dat_2018 <- full_join(game_dat_2018, team_dat_2018, "Home")
+game_dat_2017 <- full_join(game_dat_2017, team_dat_2017, "Home")
+game_dat_2016 <- full_join(game_dat_2016, team_dat_2016, "Home")
+game_dat_2015 <- full_join(game_dat_2015, team_dat_2015, "Home")
+game_dat_2014 <- full_join(game_dat_2014, team_dat_2014, "Home")
+game_dat_2013 <- full_join(game_dat_2013, team_dat_2013, "Home")
+game_dat_2012 <- full_join(game_dat_2012, team_dat_2012, "Home")
+game_dat_2011 <- full_join(game_dat_2011, team_dat_2011, "Home")
+game_dat_2010 <- full_join(game_dat_2010, team_dat_2010, "Home")
+game_dat_2009 <- full_join(game_dat_2009, team_dat_2009, "Home")
+game_dat_2008 <- full_join(game_dat_2008, team_dat_2008, "Home")
 ```
-
 
 
 ```{r}
-join <- full_join(game_dat_2018, team_dat_2018, "Home")
+reformat <- function(dat) {
+  dat <- dat %>% rename(Away = Home)
+}
+
+team_dat_2018 <- reformat(team_dat_2018)
+team_dat_2017 <- reformat(team_dat_2017)
+team_dat_2016 <- reformat(team_dat_2016)
+team_dat_2015 <- reformat(team_dat_2015)
+team_dat_2014 <- reformat(team_dat_2014)
+team_dat_2013 <- reformat(team_dat_2013)
+team_dat_2012 <- reformat(team_dat_2012)
+team_dat_2011 <- reformat(team_dat_2011)
+team_dat_2010 <- reformat(team_dat_2010)
+team_dat_2009 <- reformat(team_dat_2009)
+team_dat_2008 <- reformat(team_dat_2008)
 ```
+
+```{r}
+game_dat_2018 <- full_join(game_dat_2018, team_dat_2018, "Away")
+game_dat_2017 <- full_join(game_dat_2017, team_dat_2017, "Away")
+game_dat_2016 <- full_join(game_dat_2016, team_dat_2016, "Away")
+game_dat_2015 <- full_join(game_dat_2015, team_dat_2015, "Away")
+game_dat_2014 <- full_join(game_dat_2014, team_dat_2014, "Away")
+game_dat_2013 <- full_join(game_dat_2013, team_dat_2013, "Away")
+game_dat_2012 <- full_join(game_dat_2012, team_dat_2012, "Away")
+game_dat_2011 <- full_join(game_dat_2011, team_dat_2011, "Away")
+game_dat_2010 <- full_join(game_dat_2010, team_dat_2010, "Away")
+game_dat_2009 <- full_join(game_dat_2009, team_dat_2009, "Away")
+game_dat_2008 <- full_join(game_dat_2008, team_dat_2008, "Away")
+```
+
+```{r}
+game_dat_2018 <- game_dat_2018 %>% na.omit()
+game_dat_2017 <- game_dat_2017 %>% na.omit()
+game_dat_2016 <- game_dat_2016 %>% na.omit()
+game_dat_2015 <- game_dat_2015 %>% na.omit()
+game_dat_2014 <- game_dat_2014 %>% na.omit()
+game_dat_2013 <- game_dat_2013 %>% na.omit()
+game_dat_2012 <- game_dat_2012 %>% na.omit()
+game_dat_2011 <- game_dat_2011 %>% na.omit()
+game_dat_2010 <- game_dat_2010 %>% na.omit()
+game_dat_2009 <- game_dat_2009 %>% na.omit()
+game_dat_2008 <- game_dat_2008 %>% na.omit()
+```
+
+
+**Explore the Data**
+
+```{r}
+
+
+```
+
+
+
 
 
 

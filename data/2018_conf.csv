@@ -1,0 +1,12 @@
+rank,conference,size,num_games,win,loss,pct,bowl_games,bowl_win,bowl_loss,bowl_pct,srs,sos,prepoll,postpoll,champion
+1,Southeastern Conference,14,170,107,63,0.629,na,na,na,na,11.2,5.58,5,0,
+2,Big Ten Conference,14,170,92,78,0.541,na,na,na,na,6.47,4.48,5,0,
+3,Big 12 Conference,10,121,68,53,0.562,na,na,na,na,6.11,3.34,4,0,
+4,Atlantic Coast Conference,14,169,94,75,0.556,na,na,na,na,4.45,2.36,4,0,
+5,Pacific-12 Conference,12,146,79,67,0.541,na,na,na,na,4.1,2.34,4,0,
+6,American Athletic Conference,12,146,74,72,0.507,na,na,na,na,-1.35,-1.96,1,0,
+7,Independent,6,72,41,31,0.569,na,na,na,na,-1.78,-2.63,1,0,
+8,Mountain West Conference,12,147,75,72,0.51,na,na,na,na,-2.53,-3.02,1,0,
+9,Sun Belt Conference,10,121,62,59,0.512,na,na,na,na,-4.01,-4.03,0,0,
+10,Mid-American Conference,12,146,67,79,0.459,na,na,na,na,-4.82,-3.28,0,0,
+11,Conference USA,14,170,79,91,0.465,na,na,na,na,-7.38,-6.09,0,0,

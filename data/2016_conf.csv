@@ -1,0 +1,12 @@
+rank,conference,size,num_games,win,loss,pct,bowl_games,bowl_win,bowl_loss,bowl_pct,srs,sos,prepoll,postpoll,champion
+1,Southeastern Conference,14,181,105,76,0.58,13,6,7,0.462,7.17,4.11,6,5,Alabama
+2,Pacific-12 Conference,12,152,84,68,0.553,6,3,3,0.5,6.64,4.8,5,5,
+3,Atlantic Coast Conference,14,182,108,74,0.593,12,9,3,0.75,6.39,3.13,4,5,Clemson
+4,Big Ten Conference,14,180,99,81,0.55,10,3,7,0.3,5.13,3.6,4,4,Penn State
+5,Big 12 Conference,10,126,68,58,0.54,6,4,2,0.667,3.74,1.86,4,3,
+6,American Athletic Conference,12,153,82,71,0.536,7,2,5,0.286,-0.65,-1.86,1,1,Temple
+7,Independent,4,50,23,27,0.46,2,2,0,1,-0.89,-1.28,1,0,
+8,Mountain West Conference,12,154,79,75,0.513,7,4,3,0.571,-2.97,-3.1,0,1,San Diego State
+9,Mid-American Conference,12,152,72,80,0.474,6,0,6,0,-4.97,-4.42,0,1,Western Michigan
+10,Sun Belt Conference,11,138,66,72,0.478,6,4,2,0.667,-5.3,-3.73,0,0,
+11,Conference USA,13,165,77,88,0.467,7,4,3,0.571,-6.99,-5.34,0,0,Western Kentucky

@@ -1,0 +1,13 @@
+rank,conference,size,num_games,win,loss,pct,bowl_games,bowl_win,bowl_loss,bowl_pct,srs,sos,prepoll,postpoll,champion
+1,Southeastern Conference,12,156,97,59,0.622,10,6,4,0.6,10.35,5.37,5,4,Alabama
+2,Big East Conference,8,102,64,38,0.627,6,4,2,0.667,5.51,1.52,0,3,Cincinnati
+3,Atlantic Coast Conference,12,153,82,71,0.536,7,3,4,0.429,5.36,3.49,4,4,Georgia Tech
+4,Big 12 Conference,12,154,88,66,0.571,8,4,4,0.5,5.33,2.25,5,3,Texas
+5,Pacific-10 Conference,10,127,68,59,0.535,7,2,5,0.286,4.84,3.76,3,2,Oregon
+6,Big Ten Conference,11,139,80,59,0.576,7,4,3,0.571,3.54,0.82,3,4,Ohio State
+7,Mountain West Conference,9,113,61,52,0.54,5,4,1,0.8,-0.26,-1.15,3,3,Texas Christian
+8,Independent,3,38,21,17,0.553,1,1,0,1,-0.41,-1.86,1,0,
+9,Western Athletic Conference,9,115,57,58,0.496,4,2,2,0.5,-4.26,-3.24,1,1,Boise State
+10,Conference USA,12,152,70,82,0.461,6,2,4,0.333,-5.16,-2.91,0,0,East Carolina
+11,Mid-American Conference,13,163,70,93,0.429,5,1,4,0.2,-8.86,-6.14,0,1,Central Michigan
+12,Sun Belt Conference,9,110,45,65,0.409,2,1,1,0.5,-8.87,-5,0,0,Troy

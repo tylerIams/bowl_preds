@@ -8,11 +8,12 @@ output: html_document
 
 ```{r}
 library(tidyverse)
+library(keras)
 ```
 
 ```{r, message=FALSE, warning=FALSE}
 # 2008 data
-conf_dat_2008 <- read_csv("data/2008_conf.csv")
+conf_dat_2008 <- read_csv("data/2008_conf.csv") 
 def_dat_2008 <- read_csv("data/2008_defense.csv")
 off_dat_2008 <- read_csv("data/2008_offense.csv")
 game_dat_2008 <- read_csv("data/2008_games.csv")
@@ -454,90 +455,290 @@ game_dat_2008 <- game_dat_2008 %>% na.omit()
 conference_list <- conference_list %>% rename(Home = School)
 
 game_dat_2018 <- full_join(game_dat_2018, conference_list, "Home")
+game_dat_2017 <- full_join(game_dat_2017, conference_list, "Home")
+game_dat_2016 <- full_join(game_dat_2016, conference_list, "Home")
+game_dat_2015 <- full_join(game_dat_2015, conference_list, "Home")
+game_dat_2014 <- full_join(game_dat_2014, conference_list, "Home")
+game_dat_2013 <- full_join(game_dat_2013, conference_list, "Home")
+game_dat_2012 <- full_join(game_dat_2012, conference_list, "Home")
+game_dat_2011 <- full_join(game_dat_2011, conference_list, "Home")
+game_dat_2010 <- full_join(game_dat_2010, conference_list, "Home")
+game_dat_2009 <- full_join(game_dat_2009, conference_list, "Home")
+game_dat_2008 <- full_join(game_dat_2008, conference_list, "Home")
 
 game_dat_2018 <- game_dat_2018 %>% rename(Home_conf = conf)
+game_dat_2017 <- game_dat_2017 %>% rename(Home_conf = conf)
+game_dat_2016 <- game_dat_2016 %>% rename(Home_conf = conf)
+game_dat_2015 <- game_dat_2015 %>% rename(Home_conf = conf)
+game_dat_2014 <- game_dat_2014 %>% rename(Home_conf = conf)
+game_dat_2013 <- game_dat_2013 %>% rename(Home_conf = conf)
+game_dat_2012 <- game_dat_2012 %>% rename(Home_conf = conf)
+game_dat_2011 <- game_dat_2011 %>% rename(Home_conf = conf)
+game_dat_2010 <- game_dat_2010 %>% rename(Home_conf = conf)
+game_dat_2009 <- game_dat_2009 %>% rename(Home_conf = conf)
+game_dat_2008 <- game_dat_2008 %>% rename(Home_conf = conf)
 
 conference_list <- conference_list %>% rename(Away = Home)
 
 game_dat_2018 <- full_join(game_dat_2018, conference_list, "Away")
+game_dat_2017 <- full_join(game_dat_2017, conference_list, "Away")
+game_dat_2016 <- full_join(game_dat_2016, conference_list, "Away")
+game_dat_2015 <- full_join(game_dat_2015, conference_list, "Away")
+game_dat_2014 <- full_join(game_dat_2014, conference_list, "Away")
+game_dat_2013 <- full_join(game_dat_2013, conference_list, "Away")
+game_dat_2012 <- full_join(game_dat_2012, conference_list, "Away")
+game_dat_2011 <- full_join(game_dat_2011, conference_list, "Away")
+game_dat_2010 <- full_join(game_dat_2010, conference_list, "Away")
+game_dat_2009 <- full_join(game_dat_2009, conference_list, "Away")
+game_dat_2008 <- full_join(game_dat_2008, conference_list, "Away")
 
 game_dat_2018 <- game_dat_2018 %>% rename(Away_conf = conf)
-
-colnames(game_dat_2018)
+game_dat_2017 <- game_dat_2017 %>% rename(Away_conf = conf)
+game_dat_2016 <- game_dat_2016 %>% rename(Away_conf = conf)
+game_dat_2015 <- game_dat_2015 %>% rename(Away_conf = conf)
+game_dat_2014 <- game_dat_2014 %>% rename(Away_conf = conf)
+game_dat_2013 <- game_dat_2013 %>% rename(Away_conf = conf)
+game_dat_2012 <- game_dat_2012 %>% rename(Away_conf = conf)
+game_dat_2011 <- game_dat_2011 %>% rename(Away_conf = conf)
+game_dat_2010 <- game_dat_2010 %>% rename(Away_conf = conf)
+game_dat_2009 <- game_dat_2009 %>% rename(Away_conf = conf)
+game_dat_2008 <- game_dat_2008 %>% rename(Away_conf = conf)
 ```
 
-
-
-
-
-
-
-
-
-
-**Structure Variables Properly**
+**Standardize Function**
 
 ```{r}
-game_dat_2018 <- game_dat_2018 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
+standarize <- function(df) {
+  
+  df1 <- df %>% select(Wk, Year, Home, Away, Outcome, Home_conf, Away_conf) %>% na.omit()
+  game <- df %>% select(-Wk, -Year, -Home, -Away, -Outcome, -Home_conf, -Away_conf) %>% na.omit()
+  game <- sapply(game, as.numeric)
+  
+for (i in 0:ncol(game)) { 
+  for (j in 0:nrow(game)) {
+        sd <- sd(game[,i])
+        mean <- mean(game[,i])
+        game[j,i] <- (game[j,i] - mean)/sd
+    }
+  }
 
-game_dat_2017 <- game_dat_2017 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
+df <- cbind(df1, game)
+}
 
-game_dat_2016 <- game_dat_2016 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
 
-game_dat_2015 <- game_dat_2015 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2014 <- game_dat_2014 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2013 <- game_dat_2013 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2012 <- game_dat_2012 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2011 <- game_dat_2011 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2010 <- game_dat_2010 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2009 <- game_dat_2009 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
-
-game_dat_2008 <- game_dat_2008 %>% mutate(Wk = factor(Wk),
-                                          Year = factor(Year),
-                                          Home = factor(Home),
-                                          Away = factor(Away))
 ```
 
 
+```{r}
+game_dat_2018 <- game_dat_2018 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2018 <- game_dat_2018 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
 
+game_2018 <- standarize(game_dat_2018)
+game_2018 <- game_2018 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
 
-**Explore the Data**
+game_2018 <- game_2018[,-9]
+game_2018 <- game_2018[,-32]
+game_2018 <- game_2018[,-55]
+game_2018 <- game_2018[,-78]
+
+colnames(game_2018)
+```
+
+```{r}
+game_dat_2017 <- game_dat_2017 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2017 <- game_dat_2017 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2017 <- standarize(game_dat_2017)
+game_2017 <- game_2017 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2017 <- game_2017[,-9]
+game_2017 <- game_2017[,-32]
+game_2017 <- game_2017[,-55]
+game_2017 <- game_2017[,-78]
+
+colnames(game_2017)
+```
+
+```{r}
+game_dat_2016 <- game_dat_2016 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2016 <- game_dat_2016 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2016 <- standarize(game_dat_2016)
+game_2016 <- game_2016 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2016 <- game_2016[,-9]
+game_2016 <- game_2016[,-32]
+game_2016 <- game_2016[,-55]
+game_2016 <- game_2016[,-78]
+
+colnames(game_2016)
+```
+
+```{r}
+game_dat_2015 <- game_dat_2015 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2015 <- game_dat_2015 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2015 <- standarize(game_dat_2015)
+game_2015 <- game_2015 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2015 <- game_2015[,-9]
+game_2015 <- game_2015[,-32]
+game_2015 <- game_2015[,-55]
+game_2015 <- game_2015[,-78]
+
+colnames(game_2015)
+```
+
+```{r}
+game_dat_2014 <- game_dat_2014 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2014 <- game_dat_2014 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2014 <- standarize(game_dat_2014)
+game_2014 <- game_2014 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2014 <- game_2014[,-9]
+game_2014 <- game_2014[,-32]
+game_2014 <- game_2014[,-55]
+game_2014 <- game_2014[,-78]
+
+colnames(game_2014)
+```
+
+```{r}
+game_dat_2013 <- game_dat_2013 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2013 <- game_dat_2013 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2013 <- standarize(game_dat_2013)
+game_2013 <- game_2013 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2013 <- game_2013[,-9]
+game_2013 <- game_2013[,-32]
+game_2013 <- game_2013[,-55]
+game_2013 <- game_2013[,-78]
+
+colnames(game_2013)
+```
+
+```{r}
+game_dat_2012 <- game_dat_2012 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2012 <- game_dat_2012 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2012 <- standarize(game_dat_2012)
+game_2012 <- game_2012 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2012 <- game_2012[,-9]
+game_2012 <- game_2012[,-32]
+game_2012 <- game_2012[,-55]
+game_2012 <- game_2012[,-78]
+
+colnames(game_2012)
+```
+
+```{r}
+game_dat_2011 <- game_dat_2011 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2011 <- game_dat_2011 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2011 <- standarize(game_dat_2011)
+game_2011 <- game_2011 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2011 <- game_2011[,-9]
+game_2011 <- game_2011[,-32]
+game_2011 <- game_2011[,-55]
+game_2011 <- game_2011[,-78]
+
+colnames(game_2011)
+```
+
+```{r}
+game_dat_2010 <- game_dat_2010 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2010 <- game_dat_2010 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2010 <- standarize(game_dat_2010)
+game_2010 <- game_2010 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2010 <- game_2010[,-9]
+game_2010 <- game_2010[,-32]
+game_2010 <- game_2010[,-55]
+game_2010 <- game_2010[,-78]
+
+colnames(game_2010)
+```
+
+```{r}
+game_dat_2009 <- game_dat_2009 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2009 <- game_dat_2009 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2009 <- standarize(game_dat_2009)
+game_2009 <- game_2009 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2009 <- game_2009[,-9]
+game_2009 <- game_2009[,-32]
+game_2009 <- game_2009[,-55]
+game_2009 <- game_2009[,-78]
+
+colnames(game_2009)
+```
+
+```{r}
+game_dat_2008 <- game_dat_2008 %>% mutate(Home_conf = ifelse(is.na(Home_conf == TRUE), "MWC", Home_conf))
+game_dat_2008 <- game_dat_2008 %>% mutate(Away_conf = ifelse(is.na(Away_conf == TRUE), "MWC", Away_conf))
+
+game_2008 <- standarize(game_dat_2008)
+game_2008 <- game_2008 %>% mutate(Wk = factor(Wk),
+                                  Year = factor(Year),
+                                  Home = factor(Home),
+                                  Away = factor(Away),
+                                  Outcome = factor(Outcome))
+
+game_2008 <- game_2008[,-9]
+game_2008 <- game_2008[,-32]
+game_2008 <- game_2008[,-55]
+game_2008 <- game_2008[,-78]
+
+colnames(game_2008)
+```
+
+**Output the Data**
 
 ```{r}
 write_csv(game_dat_2008, "game_data/game_dat_2008.csv")
@@ -553,6 +754,110 @@ write_csv(game_dat_2017, "game_data/game_dat_2017.csv")
 write_csv(game_dat_2018, "game_data/game_dat_2018.csv")
 ```
 
+```{r}
+write_csv(game_2008, "stdzd_game_data/game_2008.csv")
+write_csv(game_2009, "stdzd_game_data/game_2009.csv")
+write_csv(game_2010, "stdzd_game_data/game_2010.csv")
+write_csv(game_2011, "stdzd_game_data/game_2011.csv")
+write_csv(game_2012, "stdzd_game_data/game_2012.csv")
+write_csv(game_2013, "stdzd_game_data/game_2013.csv")
+write_csv(game_2014, "stdzd_game_data/game_2014.csv")
+write_csv(game_2015, "stdzd_game_data/game_2015.csv")
+write_csv(game_2016, "stdzd_game_data/game_2016.csv")
+write_csv(game_2017, "stdzd_game_data/game_2017.csv")
+write_csv(game_2018, "stdzd_game_data/game_2018.csv")
+```
+
+**Bind it all together**
+
+```{r}
+all_game <- rbind(game_2008, game_2009, game_2010, game_2011, game_2012, game_2013, game_2014, game_2015, game_2016, game_2017, game_2018)
+```
+
+**Begin Modeling**
+
+```{r}
+future_games1 <- all_game[8112:8150,]
+all_game <- all_game[-8112,]
+
+write_csv(all_game, "stdzd_game_data/all_past_games.csv")
+write_csv(future_games, "stdzd_game_data/future_games.csv")
+```
+
+
+**Create Training and Validation Sets**
+
+```{r}
+all_game_mat <- model.matrix(~ ., data = select(all_game, -Outcome))
+all_game_tar <- model.matrix(~ ., data = select(all_game, Outcome))
+all_game_mat <- all_game_mat[,-1]
+all_game_tar <- all_game_tar[,-1]
+
+indices <- sample(1:8111, size = 200)
+
+train_data <- all_game_mat[-indices,]
+train_tar <- all_game_tar[-indices]
+
+val_data <- all_game_mat[indices,]
+val_tar <- all_game_tar[indices]
+
+dim(train_data)
+dim(val_data)
+```
+
+```{r}
+model <- keras_model_sequential() %>%
+  layer_dense(units = 1028, activation = "relu", input_shape = 402) %>%
+  layer_dense(units = 512, activation = "relu") %>%
+  layer_dense(units = 256, activation = "relu") %>%
+  layer_dense(units = 128, activation = "relu") %>%
+  layer_dense(units = 64, activation = "relu") %>%
+  layer_dense(units = 1, activation = "sigmoid")
+```
+
+```{r}
+model %>% compile(
+  optimizer = "rmsprop",
+  loss = "binary_crossentropy",
+  metrics = c("accuracy")
+)
+```
+
+```{r}
+history <- model %>% fit(
+  train_data,
+  train_tar,
+  epochs = 9,
+  batch_size = 512,
+  validation_data = list(val_data, val_tar)
+)
+```
+
+**Predict on Future Games**
+
+```{r}
+future_games <- model.matrix(~ ., data = select(future_games, -Outcome))
+future_games <- future_games[,-1]
+
+preds <- predict_on_batch(model, future_games)
+
+preds <- model %>% predict(future_games1)
+
+preds1 <- (preds - mean(preds)) / sd(preds)
+
+future_games_new <- as.vector(future_games1$Home)
+
+for (i in 1:length(future_games_new))
+future_games_new[1]
+
+predictions <- tibble(Home = future_games1$Home, pred = as.vector(preds1))
+
+preds2 <- predict_classes(model, future_games)
+
+preds2
+
+tib <- tibble(Home = future_games$Home, pred = as.vector(preds), Away = future_games$Away)
+```
 
 
 
